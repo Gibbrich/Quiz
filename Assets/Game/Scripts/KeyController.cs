@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,8 +24,17 @@ public class KeyController : MonoBehaviour
     public KeyCode Key
     {
         get { return key; }
-    }    
-    
+    }
+
+    public char Letter
+    {
+        get
+        {
+            // as KeyCode has the same int value as char, we can just cast
+            return (char) key;
+        }
+    }
+
     #endregion
     
     #region Unity callbacks
@@ -42,16 +52,5 @@ public class KeyController : MonoBehaviour
         GetComponentInChildren<Text>().text = Key.ToString();
     }
 
-    #endregion
-    
-    #region Public methods
-
-    public static KeyController Create(KeyController prefab, Vector3 position, KeyCode code, Transform parent)
-    {
-        KeyController keyController = Instantiate(prefab, position, Quaternion.identity, parent);
-        keyController.key = code;
-        return keyController;
-    }
-    
     #endregion
 }

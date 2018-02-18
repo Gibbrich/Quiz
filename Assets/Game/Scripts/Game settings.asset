@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTryCount: 5
   minCountLettersInWord: 5
-  text: {fileID: 0}
+  text: {fileID: 4900000, guid: 401f2c308cfe64942858b9481f7b7c2d, type: 3}
